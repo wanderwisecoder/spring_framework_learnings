@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our 1st bean -->
+
+	<bean name="bref" class="com.springcore.reference.B">
+		<property name="y">
+			<value>9000</value>
+		</property>
+	</bean>
+
+	<!-- this is our 2nd bean -->
+
+
+	<bean name="aref" class="com.springcore.reference.A">
+		<property name="x" value="10000" />
+		<property name="obj">
+			<ref bean="bref" />
+		</property>
+	</bean>
+	
+	<!-- this is our 3rd bean -->
+
+
+	<bean name="aref1" class="com.springcore.reference.A">
+		<property name="x" value="10111" />
+		<property name="obj"> <ref bean="bref" /></property>
+	</bean>          
+	
+		<!-- this is our 4th bean -->
+
+
+	<bean name="aref2" class="com.springcore.reference.A">
+		<property name="x" value="22211" />
+		<property name ="obj" ref = "bref"/>
+		
+	</bean>
+	
+	<!-- this is our 5th bean -->
+
+
+	<bean name="aref3" class="com.springcore.reference.A" p:x="33311" p:obj-ref="bref"/>
+		
+
+	<!-- more bean definitions go here -->
+</beans>

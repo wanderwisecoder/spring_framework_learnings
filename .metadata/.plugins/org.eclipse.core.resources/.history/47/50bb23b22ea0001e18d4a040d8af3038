@@ -1,0 +1,25 @@
+package springmvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ReController {
+
+	@RequestMapping("/one")
+	public String one(Model model) {
+		model.addAttribute("age", 54);
+		System.out.println("This is one handler controller/url.!");
+		model.addAttribute("name", "Roshan");
+
+		model.addAttribute("id", 1234);
+		return "redirect:/";
+	}
+
+	@RequestMapping("/enjoy")
+	public String two() {
+		System.out.println("This is two handler controller/url.!");
+		return "about";
+	}
+}

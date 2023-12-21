@@ -1,0 +1,7 @@
+INDEX VERSION 1.134
+/Users/wanderwise/Desktop/Java/Spring_Tutorials/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1588754539.index
+/SpringMVC/src/main/java
+/Users/wanderwise/Desktop/Java/Spring_Tutorials/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2161200811.index
+/SpringMVC/src/main/java
+/Users/wanderwise/Desktop/Java/Spring_Tutorials/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2066726819.index
+/SpringMVC/src/main/java

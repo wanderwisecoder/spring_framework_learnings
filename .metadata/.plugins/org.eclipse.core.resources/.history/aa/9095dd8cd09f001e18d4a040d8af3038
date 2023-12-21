@@ -1,0 +1,13 @@
+package springmvc.dao;
+
+import springmvc.model.User;
+
+public class UserDao {
+	
+	public int saveUser(User user) {
+		
+		return;
+		
+	}
+
+}

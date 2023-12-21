@@ -1,0 +1,10 @@
+INDEX VERSION 1.4+/Users/wanderwise/Desktop/Java/Spring_Tutorials/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+724890056.index
+2066726819.index
+2066726819.index
+2161200811.index
+292167042.index
+4053022172.index
+2473597561.index
+100985922.index
+366653797.index

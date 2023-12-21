@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our 1st bean -->
+	 <bean name="certificate" class="com.springcore.constructor.Certi">
+		<constructor-arg value="Certification in Spring" />
+	</bean> 
+
+<!-- <bean name="certificate" 
+class="com.springcore.constructor.Certi" 
+c:name="Phython Programming"></bean>
+ -->	
+	
+	<bean name="person" class="com.springcore.constructor.Person">
+		<constructor-arg value="Suraj" />
+		<constructor-arg value="110" type="int" />
+		<constructor-arg ref="certificate" />
+		<constructor-arg>
+		<list>
+		<value>987654</value>
+		<value>4576879</value>
+		<value>75767687</value>
+		<value>8987523</value>
+		</list>
+		</constructor-arg>
+	</bean>
+	<bean name="add1" class="com.springcore.constructor.Addition">
+	<constructor-arg value="75478" type = "double"/>
+	<constructor-arg value="8976"  type = "double"/>
+	</bean>
+	
+	<bean name="add2" class="com.springcore.constructor.Addition">
+	<constructor-arg value="75478" />
+	<constructor-arg value="8976"  />
+	</bean>
+		
+</beans>

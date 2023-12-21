@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- this is our 1st bean -->
+
+	<bean name="addresss" class="com.springcore.auto.wire.Address">
+	<property name="city" value="Pune"/>
+	<property name="state" value="Maharashtra"/>
+	
+	</bean>
+		<bean name="emp1" class="com.springcore.auto.wire.Emp" autowire="constructor" p:name="Rahul" />
+	
+	<!-- more bean definitions go here -->
+</beans>

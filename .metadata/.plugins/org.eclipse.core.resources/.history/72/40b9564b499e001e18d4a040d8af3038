@@ -1,0 +1,9 @@
+package springmvc.controller;
+
+public class ContactController {
+public String showForm() {
+	return null;
+	
+	
+}
+}

@@ -1,0 +1,10 @@
+package springmvc.service;
+
+import springmvc.dao.UserDao;
+
+public class UserService {
+	
+	private UserDao userDao;
+	
+
+}

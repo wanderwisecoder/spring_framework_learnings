@@ -1,0 +1,30 @@
+package springmvc.controller;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class ReController {
+
+	@RequestMapping("/one")
+	public String home(Model model) {
+		model.addAttribute("age", 54);
+		System.out.println("This is one hand controller/url.!");
+		model.addAttribute("name", "Roshan");
+
+		model.addAttribute("id", 1234);
+		return "index";
+	}
+
+	@RequestMapping("/enjoy")
+	public String about() {
+		System.out.println("This is about controller/url.!");
+		return "about";
+	}
+}

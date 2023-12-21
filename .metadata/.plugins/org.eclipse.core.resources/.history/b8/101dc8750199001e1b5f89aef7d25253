@@ -1,0 +1,143 @@
+package com.spring.orm;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.orm.dao.StudentDao;
+import com.spring.orm.entities.Student;
+
+public class App {
+
+	public static void main(String[] args) {
+		System.out.println("Programe started...");
+		ApplicationContext context = new ClassPathXmlApplicationContext("springormconfig.xml");
+		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
+		// Student student = new Student(1454, "Joseph Farnandiz", "Tamil Nadu");
+		// int r = studentDao.insert(student);
+		// System.out.println(r);
+
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+		boolean whileLoop = true;
+		while (whileLoop) {
+
+			System.out.println("Press 1 for add new student.");
+			System.out.println("Press 2 to display all student records.");
+			System.out.println("Press 3 to get details of a single student.");
+			System.out.println("Press 4 to delete a student record.");
+			System.out.println("Press 5 to update student record.");
+			System.out.println("Press 6 to exit.");
+
+			try {
+				int input = Integer.parseInt(bufferedReader.readLine());
+				switch (input) {
+				case 1: {
+					// add new student record.
+					System.out.println("Enter student id: ");
+					int studentId = Integer.parseInt(bufferedReader.readLine());
+
+					System.out.println("Enter student name: ");
+					String studentName = bufferedReader.readLine();
+
+					System.out.println("Enter student city name: ");
+					String studentCity = bufferedReader.readLine();
+
+					Student student = new Student(studentId, studentName, studentCity);
+
+					int r = studentDao.insert(student);
+					System.out.println(r);
+					System.out.println("************************************");
+					System.out.println("");
+					break;
+				}
+				case 2: {
+					// display all student records
+
+					List<Student> allStudents = studentDao.getAllStudent();
+					for (Student student : allStudents) {
+						System.out.println("Id : " + student.getStudentId());
+						System.out.println("Name : " + student.getStudentName());
+						System.out.println("City : " + student.getStudentCityString());
+						System.out.println("____________________________________________________");
+
+					}
+
+					break;
+				}
+				case 3: {
+					// display single student record
+
+					System.out.println("Enter student id: ");
+					int studentId = Integer.parseInt(bufferedReader.readLine());
+					Student student = studentDao.getStudent(studentId);
+					
+					System.out.println("Id : " + student.getStudentId());
+					System.out.println("Name : " + student.getStudentName());
+					System.out.println("City : " + student.getStudentCityString());
+					
+					System.out.println("************************************");
+					System.out.println("");
+					
+					break;
+				}
+				case 4: {
+					// delete single student record
+					
+					System.out.println("Enter student id: ");
+					int studentId = Integer.parseInt(bufferedReader.readLine());
+					
+					studentDao.deleteStudent(studentId);
+					System.out.println("Records of a student with ID : "+ studentId +", deleted sucessfully.!");
+
+					System.out.println("************************************");
+					System.out.println("");
+					
+
+					break;
+				}
+				case 5: {
+					// update single student record
+					
+					System.out.println("Enter student id: ");
+					int studentId = Integer.parseInt(bufferedReader.readLine());
+
+					System.out.println("Enter student name: ");
+					String studentName = bufferedReader.readLine();
+
+					System.out.println("Enter student city name: ");
+					String studentCity = bufferedReader.readLine();
+
+					Student student = new Student(studentId, studentName, studentCity);
+
+					studentDao.updateStudent(student);
+					System.out.println("************************************");
+					System.out.println("");
+					break
+
+					break;
+				}
+				case 6: {
+					// exit.
+
+					whileLoop = false;
+					break;
+				}
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + input);
+				}
+
+			} catch (Exception e) {
+				System.out.println("Invalid input try with another one.!!");
+				System.err.println(e.getMessage());
+			}
+
+		}
+		System.out.println("Thank you for using the application.!!");
+
+	}
+
+}
